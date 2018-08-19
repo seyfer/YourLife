@@ -79,8 +79,7 @@ summary,
 time,
 mark,
 audio,
-video
-{
+video {
     font: inherit;
     font-size: 100%;
 
@@ -102,81 +101,76 @@ header,
 hgroup,
 menu,
 nav,
-section
-{
+section {
     display: block;
 }
 
-body
-{
+body {
     line-height: 1;
 }
 
 ol,
-ul
-{
+ul {
     list-style: none;
 }
 
 blockquote,
-q
-{
+q {
     quotes: none;
-}blockquote:before,
+}
+
+blockquote:before,
 blockquote:after,
 q:before,
-q:after
-{
+q:after {
     content: none;
 }
 
-table
-{
+table {
     border-spacing: 0;
     border-collapse: collapse;
 }
+
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 
-
-body
-{
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-       -moz-user-select: none;     /* Firefox all */
-        -ms-user-select: none;      /* IE 10+ */
-            user-select: none;
+body {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
 
     background: #fff;
     /* No support for these yet, use at own risk */
 
-         -o-user-select: none;
-         -webkit-print-color-adjust: exact;
+    -o-user-select: none;
+    -webkit-print-color-adjust: exact;
 }
-.title
-{
+
+.title {
     font-size: 25px;
 
     margin: 0 auto;
 
     text-align: center;
 }
+
 #life,
 .header,
-.copyright
-{
+.copyright {
     width: 600px;
     margin: 0 auto;
 }
-.header
-{
+
+.header {
     padding-left: 14px;
 }
+
 .copyright, a {
-    color:#aaa;
+    color: #aaa;
     text-align: center;
 }
 
-#life div
-{
+#life div {
     font-size: 10px;
     line-height: 10px;
 
@@ -185,12 +179,12 @@ body
 
     vertical-align: top;
 }
-#life div.year:hover
-{
+
+#life div.year:hover {
     background: #ddd;
 }
-#life div.year_number
-{
+
+#life div.year_number {
     display: inline-block;
 
     width: 15px;
@@ -201,15 +195,13 @@ body
     color: #ccc;
 }
 
-#life div:nth-child(5n+1) div.year_number
-{
+#life div:nth-child(5n+1) div.year_number {
     font-weight: bolder;
 
     color: #000;
 }
 
-#life div.week
-{
+#life div.week {
     display: inline-block;
 
     width: 7px;
@@ -219,30 +211,30 @@ body
     border: 1px solid #888;
     background: #fff;
 }
-#life div.ended
-{
+
+#life div.ended {
     background: #ccc;
 }
-#life div.current
-{
+
+#life div.current {
     background: #f00;
     box-shadow: 0 0 3px #f00;
 }
 
 @media print {
-    #life div.week
-    {
+    #life div.week {
         background: #fff;
     }
-    #life div.ended
-    {
+
+    #life div.ended {
         background: #ccc;
     }
-    #life div.current
-    {
+
+    #life div.current {
         background: #f00;
     }
+
     .print-hidden {
-        display:none;
+        display: none;
     }
 }
