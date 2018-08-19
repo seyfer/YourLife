@@ -43,9 +43,12 @@ const config = {
                         options: {
                             plugins: ['syntax-dynamic-import'],
 
-                            presets: [['env', {
-                                'modules': false,
-                            }]],
+                            presets: [
+                                ['env', {
+                                    'modules': false,
+                                }],
+                                ['stage-2']
+                            ],
                         },
                     },
                     {
