@@ -1,5 +1,7 @@
 'use strict';
 
+import '../style/app.scss';
+
 function redraw() {
 
     var life_block = document.querySelector('#life');
