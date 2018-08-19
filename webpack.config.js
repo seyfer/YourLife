@@ -29,7 +29,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js',
-        publicPath: '/'
+        publicPath: '/',
     },
     mode: 'development',
     devtool: setDevTool(),
@@ -42,23 +42,22 @@ const config = {
                     plugins: ['syntax-dynamic-import'],
 
                     presets: [['env', {
-                        'modules': false
-                    }]]
+                        'modules': false,
+                    }]],
                 },
                 include: [path.resolve(__dirname, 'src')],
                 exclude: [
-                    path.resolve(__dirname, '/node_modules/')
+                    path.resolve(__dirname, '/node_modules/'),
                 ],
             },
             {
                 test: /\.(sass|scss)$/,
-                use: [{
-                    loader: "style-loader"
-                }, {
-                    loader: "css-loader"
-                }, {
-                    loader: "sass-loader"
-                }]
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'postcss-loader'},
+                    {loader: 'sass-loader'},
+                ],
             },
             {
                 test: /\.css$/,
@@ -66,20 +65,21 @@ const config = {
                     fallback: 'style-loader',
                     use: [
                         {loader: 'css-loader'},
-                        {loader: 'sass-loader'}
+                        {loader: 'postcss-loader'},
+                        {loader: 'sass-loader'},
                     ],
-                })
+                }),
             },
-        ]
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "src/public/index.html"),
-            inject: 'body'
+            template: path.resolve(__dirname, 'src/public/index.html'),
+            inject: 'body',
         }),
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin('styles.css'),
         new webpack.DefinePlugin({
-            APP_NAME: JSON.stringify(process.env.APP_NAME)
+            APP_NAME: JSON.stringify(process.env.APP_NAME),
         }),
         new DashboardPlugin(),
     ],
@@ -92,16 +92,16 @@ const config = {
             cacheGroups: {
                 vendors: {
                     priority: -10,
-                    test: /[\\/]node_modules[\\/]/
-                }
+                    test: /[\\/]node_modules[\\/]/,
+                },
             },
 
             chunks: 'async',
             minChunks: 1,
             minSize: 30000,
-            name: true
-        }
-    }
+            name: true,
+        },
+    },
 };
 
 // Minify and copy assets in production

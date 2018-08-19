@@ -6,23 +6,14 @@ body {
 }
 
 body {
-    -webkit-user-select: none; /* Chrome all / Safari all */
-    -moz-user-select: none; /* Firefox all */
-    -ms-user-select: none; /* IE 10+ */
     user-select: none;
-
     background: #fff;
-    /* No support for these yet, use at own risk */
-
-    -o-user-select: none;
     -webkit-print-color-adjust: exact;
 }
 
 .title {
     font-size: 25px;
-
     margin: 0 auto;
-
     text-align: center;
 }
 
@@ -45,10 +36,8 @@ body {
 #life div {
     font-size: 10px;
     line-height: 10px;
-
     margin: 0;
     padding: 0;
-
     vertical-align: top;
 }
 
@@ -58,28 +47,22 @@ body {
 
 #life div.year_number {
     display: inline-block;
-
     width: 15px;
     margin-right: 5px;
-
     text-align: right;
-
     color: #ccc;
 }
 
 #life div:nth-child(5n+1) div.year_number {
     font-weight: bolder;
-
     color: #000;
 }
 
 #life div.week {
     display: inline-block;
-
     width: 7px;
     height: 7px;
     margin: 1px;
-
     border: 1px solid #888;
     background: #fff;
 }

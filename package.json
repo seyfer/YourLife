@@ -8,7 +8,8 @@
   "scripts": {
     "start": "APP_ENV=development webpack-dev-server --history-api-fallback --inline --progress",
     "dashboard": "APP_ENV=development webpack-dashboard -- webpack-dev-server --history-api-fallback --inline --progress",
-    "build": "APP_ENV=production webpack --progress --hide-modules"
+    "build": "APP_ENV=production webpack --progress --hide-modules",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/"
   },
   "devDependencies": {
     "@webpack-cli/init": "^0.1.0",
@@ -18,10 +19,15 @@
     "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.0.5",
     "dotenv": "^6.0.0",
+    "eslint": "^5.4.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.3",
+    "postcss-import": "^12.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^5.3.0",
     "reset-css": "^4.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",

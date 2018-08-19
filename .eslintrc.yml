@@ -1,0 +1,41 @@
+parserOptions:
+    ecmaVersion: 6
+    sourceType: module
+
+extends: "eslint:recommended"
+
+env:  {
+    browser: true,
+    node: true
+}
+
+rules:
+    quotes:
+    - error
+    - single
+    - {
+        avoidEscape: true
+    }
+    prefer-const:
+    - warn
+    no-var:
+    - error
+    func-call-spacing:
+    - error
+    - never
+    arrow-spacing:
+    - error
+    - {
+        before: true,
+        after: true
+    }
+    comma-dangle:
+    - error
+    - {
+        arrays: always-multiline,
+        objects: always-multiline
+    }
+    semi:
+    - error
+    - always
+
