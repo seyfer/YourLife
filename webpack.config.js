@@ -37,14 +37,21 @@ const config = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                options: {
-                    plugins: ['syntax-dynamic-import'],
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            plugins: ['syntax-dynamic-import'],
 
-                    presets: [['env', {
-                        'modules': false,
-                    }]],
-                },
+                            presets: [['env', {
+                                'modules': false,
+                            }]],
+                        },
+                    },
+                    {
+                        loader: "eslint-loader"
+                    },
+                ],
                 include: [path.resolve(__dirname, 'src')],
                 exclude: [
                     path.resolve(__dirname, '/node_modules/'),

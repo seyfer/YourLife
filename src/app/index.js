@@ -4,8 +4,10 @@ import '../style/app.scss';
 
 function redraw() {
 
-    document.querySelector('title').innerHTML = APP_NAME;
-    document.querySelector('.title').innerHTML = APP_NAME;
+    if (typeof APP_NAME !== 'undefined') {
+        document.querySelector('title').innerHTML = APP_NAME;
+        document.querySelector('.title').innerHTML = APP_NAME;
+    }
 
     const lifeBlock = document.querySelector('#life');
     lifeBlock.innerHTML = '';

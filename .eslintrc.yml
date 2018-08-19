@@ -9,6 +9,10 @@ env:  {
     node: true
 }
 
+globals: {
+    APP_NAME
+}
+
 rules:
     quotes:
     - error
@@ -38,4 +42,6 @@ rules:
     semi:
     - error
     - always
-
+    no-undef:
+    - 2
+    - { typeof: true }
