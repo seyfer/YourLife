@@ -15,7 +15,7 @@ class YourLifeManager {
     events() {
         const self = this;
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             self.redraw();
             window.onhashchange = self.redraw;
         });
