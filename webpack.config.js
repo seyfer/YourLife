@@ -24,10 +24,12 @@ function setDevTool() {
     }
 }
 
+const buildDestination = process.env.APP_BUILD || 'dist';
+
 const config = {
     entry: [path.resolve(__dirname, 'src/app/index.js')],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, buildDestination),
         filename: '[name].[chunkhash].js',
         publicPath: '/',
     },
