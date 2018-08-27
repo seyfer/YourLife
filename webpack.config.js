@@ -70,10 +70,10 @@ const config = {
             {
                 test: /\.(sass|scss)$/,
                 use: [
-                    {loader: 'style-loader'},
-                    {loader: 'css-loader'},
-                    {loader: 'postcss-loader'},
-                    {loader: 'sass-loader'},
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
                 ],
             },
             {
@@ -81,9 +81,9 @@ const config = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
-                        {loader: 'css-loader'},
-                        {loader: 'postcss-loader'},
-                        {loader: 'sass-loader'},
+                        'css-loader',
+                        'postcss-loader',
+                        'sass-loader',
                     ],
                 }),
             },

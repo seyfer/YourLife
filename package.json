@@ -6,7 +6,7 @@
   "author": "seyfer <seyferseed@mail.ru>",
   "license": "MIT",
   "scripts": {
-    "start": "APP_ENV=development webpack-dev-server --history-api-fallback --inline --progress",
+    "start": "APP_ENV=development webpack-dev-server --history-api-fallback --inline --progress --open",
     "dashboard": "APP_ENV=development webpack-dashboard -- webpack-dev-server --history-api-fallback --inline --progress",
     "build": "APP_ENV=production webpack --progress --hide-modules",
     "build-git": "APP_ENV=git APP_BUILD=docs webpack --progress --hide-modules",
