@@ -9,7 +9,7 @@
     "start": "APP_ENV=development webpack-dev-server --history-api-fallback --inline --progress",
     "dashboard": "APP_ENV=development webpack-dashboard -- webpack-dev-server --history-api-fallback --inline --progress",
     "build": "APP_ENV=production webpack --progress --hide-modules",
-    "build-git": "APP_ENV=production APP_BUILD=docs webpack --progress --hide-modules",
+    "build-git": "APP_ENV=git APP_BUILD=docs webpack --progress --hide-modules",
     "lint": "./node_modules/eslint/bin/eslint.js --fix src"
   },
   "devDependencies": {

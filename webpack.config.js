@@ -12,6 +12,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ENV = process.env.APP_ENV;
 const isTest = ENV === 'test';
 const isProd = ENV === 'prod';
+const isGit = ENV === 'git';
 
 // function to set dev-tool depending on environment
 function setDevTool() {
@@ -31,7 +32,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, buildDestination),
         filename: '[name].[chunkhash].js',
-        publicPath: '/',
+        publicPath: isGit ? '/your-life' : '/',
     },
     mode: 'development',
     devtool: setDevTool(),
