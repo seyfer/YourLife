@@ -52,7 +52,11 @@ const config = {
                         },
                     },
                     {
-                        loader: "eslint-loader"
+                        loader: "eslint-loader",
+                        options: {
+                            failOnError: isProd,
+                            failOnWarning: isProd,
+                        }
                     },
                 ],
                 include: [path.resolve(__dirname, 'src')],
