@@ -1,8 +1,8 @@
 {
-  "name": "YourLife",
+  "name": "your-life",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:seyfer/YourLife.git",
+  "repository": "git@github.com:seyfer/your-life.git",
   "author": "seyfer <seyferseed@mail.ru>",
   "license": "MIT",
   "scripts": {
