@@ -9,7 +9,7 @@
     "start": "APP_ENV=development webpack-dev-server --history-api-fallback --inline --progress",
     "dashboard": "APP_ENV=development webpack-dashboard -- webpack-dev-server --history-api-fallback --inline --progress",
     "build": "APP_ENV=production webpack --progress --hide-modules",
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src/"
+    "lint": "./node_modules/eslint/bin/eslint.js --fix src"
   },
   "devDependencies": {
     "@webpack-cli/init": "^0.1.0",

@@ -45,7 +45,7 @@ body {
     background: #ddd;
 }
 
-#life div.year_number {
+#life div.yearNumber {
     display: inline-block;
     width: 15px;
     margin-right: 5px;
@@ -53,12 +53,12 @@ body {
     color: #ccc;
 }
 
-#life div:nth-child(5n+1) div.year_number {
+#life div:nth-child(5n+1) div.yearNumber {
     font-weight: bolder;
     color: #000;
 }
 
-#life div.week {
+#life div.year > div:not(:first-child) {
     display: inline-block;
     width: 7px;
     height: 7px;
@@ -67,25 +67,25 @@ body {
     background: #fff;
 }
 
-#life div.ended {
+#life div.year > div ~ div.ended {
     background: #ccc;
 }
 
-#life div.current {
+#life div.year > div ~ div.current {
     background: #f00;
     box-shadow: 0 0 3px #f00;
 }
 
 @media print {
-    #life div.week {
+    #life div.year > div:not(:first-child) {
         background: #fff;
     }
 
-    #life div.ended {
+    #life div.year > div ~ div.ended {
         background: #ccc;
     }
 
-    #life div.current {
+    #life div.year > div ~ div.current {
         background: #f00;
     }
 

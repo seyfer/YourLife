@@ -27,6 +27,13 @@ rules:
     func-call-spacing:
     - error
     - never
+    space-before-function-paren:
+    - error
+    - {
+        anonymous: always,
+        named: never,
+        asyncArrow: always
+    }
     arrow-spacing:
     - error
     - {
