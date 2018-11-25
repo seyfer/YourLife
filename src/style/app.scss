@@ -38,7 +38,7 @@ body {
     line-height: 10px;
     margin: 0;
     padding: 0;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 #life div.year:hover {
@@ -65,6 +65,12 @@ body {
     margin: 1px;
     border: 1px solid #888;
     background: #fff;
+}
+
+#life div.year--weeks > div:not(:first-child) {
+    font-size: 6px;
+    line-height: 9px;
+    text-align: center;
 }
 
 #life div.year > div ~ div.ended {

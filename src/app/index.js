@@ -8,6 +8,8 @@ class YourLifeManager {
         this.weekOfLife = 0;
         this.pastWeeks = 0;
         this.lifeBlock = document.querySelector('#life');
+        const urlParams = new URLSearchParams(window.location.search);
+        this.withWeeks = urlParams.get('weeks') || false;
 
         this.events();
     }
@@ -85,7 +87,13 @@ class YourLifeManager {
     _fillYear(yearIndex) {
         const yearContainer = document.createElement('div');
         yearContainer.setAttribute('id', 'year_' + yearIndex);
-        yearContainer.setAttribute('class', 'year');
+
+        let yearClass = 'year';
+        if (this.withWeeks) {
+            yearClass += ' year--weeks';
+        }
+        yearContainer.setAttribute('class', yearClass);
+
         const yearNumber = document.createElement('div');
         yearNumber.setAttribute('class', 'yearNumber');
         yearNumber.innerHTML = yearIndex.toString();
@@ -105,6 +113,10 @@ class YourLifeManager {
 
         const week = document.createElement('div');
         week.setAttribute('id', 'week_' + this.weekOfLife);
+
+        if (this.withWeeks) {
+            week.innerHTML = weekIndex;
+        }
 
         weekClass = '';
         if (this.weekOfLife <= this.pastWeeks) {
