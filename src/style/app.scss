@@ -15,6 +15,7 @@ body {
     font-size: 25px;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 5px;
 }
 
 #life,
@@ -26,6 +27,11 @@ body {
 
 .header {
     padding-left: 14px;
+}
+
+.header span {
+    font-size: 10px;
+    color: #666;
 }
 
 .copyright, a {

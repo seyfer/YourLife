@@ -7,6 +7,8 @@ class YourLifeManager {
         this.birthDate = null;
         this.weekOfLife = 0;
         this.pastWeeks = 0;
+        this.pastDays = 0;
+        this.pastYears = 0;
         this.lifeBlock = document.querySelector('#life');
         const urlParams = new URLSearchParams(window.location.search);
         this.withWeeks = urlParams.get('weeks') || false;
@@ -63,10 +65,19 @@ class YourLifeManager {
         this.birthDate = Date.UTC(birthYear, birthMonth, birthDay);
     }
 
-    _initPastWeeks() {
+    _initPast() {
         const now = new Date();
         const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
-        this.pastWeeks = (today - this.birthDate) / (1000 * 60 * 60 * 24 * 7);
+        const sevenDaysSeconds = 60 * 60 * 24 * 7;
+        this.pastWeeks = Math.ceil((today - this.birthDate) / (1000 * sevenDaysSeconds));
+        this.pastDays = this.pastWeeks * 7;
+        this.pastYears = this._calculateAge(new Date(this.birthDate));
+    }
+
+    _calculateAge(birthday) {
+        const ageDifMs = Date.now() - birthday.getTime();
+        const ageDate = new Date(ageDifMs); // miliseconds from epoch
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
 
     redraw() {
@@ -75,13 +86,29 @@ class YourLifeManager {
         this.lifeBlock.innerHTML = '';
 
         this._initBirthDate();
-        this._initPastWeeks();
+        this._initPast();
+        this._prepareHeader();
 
         for (let yearIndex = 0; yearIndex <= 80; yearIndex++) {
             const yearContainer = this._fillYear(yearIndex);
 
             this.lifeBlock.appendChild(yearContainer);
         }
+    }
+
+    _prepareHeader() {
+        const headerYearsString = '&darr; Years ';
+        const headerWeeksString = ' | Weeks &rarr;';
+
+        const yearsHeader = document.createElement('span');
+        yearsHeader.innerHTML = '(your age is ' + this.pastYears + ')';
+
+        const weeksHeader = document.createElement('span');
+        weeksHeader.innerHTML += 'Current week of life: ' + this.pastWeeks
+            + ' | Current day of life: ' + this.pastDays;
+
+        document.querySelector('.header').innerHTML = headerYearsString + yearsHeader.outerHTML +
+            headerWeeksString + weeksHeader.outerHTML;
     }
 
     _fillYear(yearIndex) {
@@ -122,7 +149,7 @@ class YourLifeManager {
         if (this.weekOfLife <= this.pastWeeks) {
             weekClass += ' ended';
         }
-        if (this.weekOfLife === Math.ceil(this.pastWeeks)) {
+        if (this.weekOfLife === this.pastWeeks) {
             weekClass += ' current';
         }
         week.setAttribute('title', this.weekOfLife + ' week of life and ' + weekIndex + ' week of ' + yearIndex + ' year.');

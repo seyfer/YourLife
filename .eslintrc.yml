@@ -10,47 +10,47 @@ env:  {
 }
 
 globals: {
-    APP_NAME
+             APP_NAME
 }
 
 rules:
     no-console:
-    - warn
+        - warn
     quotes:
-    - error
-    - single
-    - {
-        avoidEscape: true
-    }
+        - error
+        - single
+        - {
+            avoidEscape: true
+        }
     prefer-const:
-    - warn
+        - warn
     no-var:
-    - error
+        - error
     func-call-spacing:
-    - error
-    - never
+        - error
+        - never
     space-before-function-paren:
-    - error
-    - {
-        anonymous: never,
-        named: never,
-        asyncArrow: never
-    }
+        - error
+        - {
+            anonymous: never,
+            named: never,
+            asyncArrow: never
+        }
     arrow-spacing:
-    - error
-    - {
-        before: true,
-        after: true
-    }
+        - error
+        - {
+            before: true,
+            after: true
+        }
     comma-dangle:
-    - error
-    - {
-        arrays: always-multiline,
-        objects: always-multiline
-    }
+        - error
+        - {
+            arrays: always-multiline,
+            objects: always-multiline
+        }
     semi:
-    - error
-    - always
+        - error
+        - always
     no-undef:
-    - 2
-    - { typeof: true }
+        - 2
+        - { typeof: true }
