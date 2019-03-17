@@ -41,14 +41,18 @@ body {
 
 #life div {
     font-size: 10px;
-    line-height: 10px;
+    line-height: 7px;
     margin: 0;
     padding: 0;
-    vertical-align: middle;
+    //vertical-align: middle;
 }
 
 #life div.year:hover {
     background: #ddd;
+}
+
+div.yearNumber {
+    vertical-align: text-top;
 }
 
 #life div.yearNumber {
