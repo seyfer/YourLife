@@ -6,6 +6,7 @@ services:
             - 8888:8888
         command: npm run docker
         volumes:
-            - ".:/usr/app"
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
         environment:
             HOST: 0.0.0.0

@@ -12,4 +12,4 @@ down:
 	docker-compose down --volumes --remove-orphans
 
 bash:
-	docker-compose exec yourlife_web bash -l -c "export TERM=xterm; export COLUMNS=`tput cols`; export LINES=`tput lines`; exec bash -l"
+	docker-compose exec web bash -l -c "export TERM=xterm; export COLUMNS=`tput cols`; export LINES=`tput lines`; exec bash -l"

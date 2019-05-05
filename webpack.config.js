@@ -31,7 +31,7 @@ const config = {
     entry: [path.resolve(__dirname, 'src/app/index.js')],
     output: {
         path: path.resolve(__dirname, buildDestination),
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         publicPath: isGit ? '/your-life' : '/',
     },
     mode: 'development',
