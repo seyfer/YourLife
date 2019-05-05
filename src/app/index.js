@@ -69,7 +69,7 @@ class YourLifeManager {
         const now = new Date();
         const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
         const sevenDaysSeconds = 60 * 60 * 24 * 7;
-        this.pastWeeks = Math.ceil((today - this.birthDate) / (1000 * sevenDaysSeconds));
+        this.pastWeeks = Math.floor((today - this.birthDate) / (1000 * sevenDaysSeconds));
         this.pastDays = this.pastWeeks * 7;
         this.pastYears = this._calculateAge(new Date(this.birthDate));
     }
