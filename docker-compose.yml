@@ -1,0 +1,11 @@
+version: "3"
+services:
+    web:
+        build: docker
+        ports:
+            - 8888:8888
+        command: npm run docker
+        volumes:
+            - ".:/usr/app"
+        environment:
+            HOST: 0.0.0.0

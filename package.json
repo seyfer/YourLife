@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "APP_ENV=development webpack-dev-server --history-api-fallback --inline --progress --open",
+    "docker": "APP_ENV=development webpack-dev-server --hot --host 0.0.0.0 --port 8888",
     "dashboard": "APP_ENV=development webpack-dashboard -- webpack-dev-server --history-api-fallback --inline --progress",
     "build": "APP_ENV=production webpack --progress --hide-modules",
     "build-git": "APP_ENV=git APP_BUILD=docs webpack --progress --hide-modules",
